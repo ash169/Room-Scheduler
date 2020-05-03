@@ -15,18 +15,10 @@ public class Dates
     private static PreparedStatement getAllDates;
     private static ResultSet resultSet;
     
-    
     static String sql = "insert into dates (date) values (?)";
    
     java.sql.Date availableDates;  //Property I (Primary Key)
-    
-     
-    
-    
-    
-    
-    
-    
+   
     
     public static void addDate(Date availableDates)
     {
@@ -44,14 +36,7 @@ public class Dates
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
+
     public static ArrayList<Date> getAllDates()     //To load the comboBox
     {
         connection = DBConnection.getConnection();
