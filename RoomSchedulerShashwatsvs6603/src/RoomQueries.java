@@ -9,17 +9,11 @@ import java.sql.*;
 
 
 
-
 public class RoomQueries   //getAllPossibleRooms    //addRoom    //dropRoom         
 {
-    
-    
     private static Connection connection;
-    
     private static ArrayList<RoomEntry> roomInfo = new ArrayList<RoomEntry>(); // Array 'roomInfo' of type RoomEntry contains the list of all rooms (name+capacity) 
-    
-    
-    
+
     private static PreparedStatement addRoomStatement;
     private static PreparedStatement dropRoomStatement;  
     private static Statement getAllPossibleRoomsStatement;
@@ -36,13 +30,7 @@ public class RoomQueries   //getAllPossibleRooms    //addRoom    //dropRoom
     static String sql3 = "delete from rooms where name = ? ";
     static String sql4 = "select * from rooms where name = ? and seats = ?";
     
-    
-    
-    
-    
-   
-    
- 
+
     public static void addRoom(String addRoomName, int addRoomSeats) 
     {
         //When a room is added, the wait list must be searched for any faculty waiting for 
@@ -64,13 +52,7 @@ public class RoomQueries   //getAllPossibleRooms    //addRoom    //dropRoom
         }
         
     }
-    
-    
-    
-    
-    
-    
-    
+
    
     public static void dropRoom(String dropRoomName)              
     // We take in a roomNumber and remove it from all of our reservations and waitlists
@@ -95,15 +77,7 @@ public class RoomQueries   //getAllPossibleRooms    //addRoom    //dropRoom
         
     }
         
- 
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     public static ArrayList <String> getAllRooms()   
  
@@ -133,16 +107,7 @@ public class RoomQueries   //getAllPossibleRooms    //addRoom    //dropRoom
         return roomNames;
         
     }
-    
-     
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     public static ArrayList<RoomEntry> getAllPossibleRoomsbySeats(int seats)       
   
@@ -172,11 +137,7 @@ public class RoomQueries   //getAllPossibleRooms    //addRoom    //dropRoom
         return roomInfo;
         
     }
-    
-    
-    
-    
-    
+ 
     
     
     public static ArrayList<RoomEntry> getAllPossibleRoomsbyNameAndSeats(String name, int seats)       
