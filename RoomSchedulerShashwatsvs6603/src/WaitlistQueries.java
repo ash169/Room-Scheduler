@@ -14,8 +14,6 @@ public class WaitlistQueries  //getWaitlistByDate   //getWaitlistByFaculty   //a
     private static Connection connection;
     private static ResultSet resultSet = null;
     
-    
-    
     private static PreparedStatement getAllStatement;
     private static PreparedStatement deleteEntryStatement;
     private static PreparedStatement getAllByDateAndSeatsStatement;
@@ -46,15 +44,7 @@ public class WaitlistQueries  //getWaitlistByDate   //getWaitlistByFaculty   //a
     static String sql6 = "select * from waitlist where faculty = ? ";
     static String sql7 = "select * from waitlist order by timestamp ";
   
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     public static ArrayList<WaitlistEntry> getAllWaitlists()
     {
         connection = DBConnection.getConnection();
@@ -83,19 +73,6 @@ public class WaitlistQueries  //getWaitlistByDate   //getWaitlistByFaculty   //a
         return waitlistInfo;
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
@@ -131,17 +108,7 @@ public class WaitlistQueries  //getWaitlistByDate   //getWaitlistByFaculty   //a
         return waitlistInfoByDateAndSeats;
         
     }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+ 
     public static ArrayList<WaitlistEntry> getAllWaitlistsByFacultyAndDate(String faculty, Date date)
     {
         connection = DBConnection.getConnection();
@@ -175,15 +142,7 @@ public class WaitlistQueries  //getWaitlistByDate   //getWaitlistByFaculty   //a
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-        
+
     public static ArrayList<WaitlistEntry> getAllWaitlistsBySeats(int seats)
     {
         connection = DBConnection.getConnection();
@@ -217,21 +176,6 @@ public class WaitlistQueries  //getWaitlistByDate   //getWaitlistByFaculty   //a
         
     }
  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     public static void addWaitlistEntry(String faculty, Date date, int seats)
     {
         connection = DBConnection.getConnection();
@@ -257,15 +201,7 @@ public class WaitlistQueries  //getWaitlistByDate   //getWaitlistByFaculty   //a
         }    
 
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     public static void addNewWaitlistEntry(String faculty, Date date, int seats, java.sql.Timestamp time)
     {
@@ -290,19 +226,7 @@ public class WaitlistQueries  //getWaitlistByDate   //getWaitlistByFaculty   //a
         }    
 
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     public static void getWaitlistByDate(String faculty, Date date, int seats)  //TO BE EDITED
     {
@@ -329,20 +253,7 @@ public class WaitlistQueries  //getWaitlistByDate   //getWaitlistByFaculty   //a
         }    
 
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     public static ArrayList <WaitlistEntry> getWaitlistByFaculty(String faculty)  
     {
@@ -373,17 +284,7 @@ public class WaitlistQueries  //getWaitlistByDate   //getWaitlistByFaculty   //a
         return waitlistInfoByFaculty;
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     public static void cancelWaitlistEntry(String faculty, Date date, int seats)  //TO BE EDITED
     {
@@ -410,14 +311,7 @@ public class WaitlistQueries  //getWaitlistByDate   //getWaitlistByFaculty   //a
         }    
 
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
     public static void deleteWaitlistEntry(String faculty, Date date,java.sql.Timestamp time)  
     {
         connection = DBConnection.getConnection();
@@ -443,9 +337,7 @@ public class WaitlistQueries  //getWaitlistByDate   //getWaitlistByFaculty   //a
         }    
 
     }
-    
-    
-    
+
     
     public static ArrayList<WaitlistEntry> newWaitlistByTimestamp()
         {
