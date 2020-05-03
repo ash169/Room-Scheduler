@@ -8,17 +8,6 @@ import java.sql.*;
 import java.util.Calendar;
 
 
-/*
-So display the name of all faculty members that have a reservation on that particular date in the format 'FacultyName reserved RoomName', for every date
-For a particular date, return name and seats and do this for all dates
-
-This is not needed for this part for the difference is for cancelReservation it is done by the user that suppose they want to cancel a 
-particular reservation so in that case, we remove that particular data from  our reservations table and then try to book that room for someone in the 
-waitlist looking for the same room. In deleteReservation, it is  done after you drop a room for some reason, so not the user but you drop a room and 
-then in that case, you will have to delete the reservations for that  room and then allott the faculty some different available room.*/
-
-
-
 public class ReservationQueries  //getAllReservationsByDate  //getRoomsReservedByDtae  //addReservationEntry  //cancelReservation  //getAllReservationsByFaculty //deleteReservations
 {
     
@@ -53,12 +42,7 @@ public class ReservationQueries  //getAllReservationsByDate  //getRoomsReservedB
     static String sql6 = "select * from reservations where faculty = ? ";
     static String sql7 = "select * from reservations where room = ? order by timestamp ";
   
-    
-    
-    
-    
-    
-    
+
     
     public static ArrayList<ReservationEntry> getAllReservationsByDate(Date date)
     {
@@ -91,8 +75,6 @@ public class ReservationQueries  //getAllReservationsByDate  //getRoomsReservedB
         return reservationInfo;
         
     }
-    
-    
     
     
     
@@ -131,11 +113,7 @@ public class ReservationQueries  //getAllReservationsByDate  //getRoomsReservedB
         
     }
     
-    
-    
-    
-    
-    
+
         
     public static String getRoomNameByFacultyAndDate(String faculty, Date date)
     {
@@ -173,20 +151,7 @@ public class ReservationQueries  //getAllReservationsByDate  //getRoomsReservedB
         
     }
     
-    
-  
-    
-
-    
-    
-    
-    
-      
-    
-    
-    
-    
-    
+   
         
     public static void cancelReservationEntry(String faculty, Date date, java.sql.Timestamp time)  
     {
@@ -215,15 +180,7 @@ public class ReservationQueries  //getAllReservationsByDate  //getRoomsReservedB
  
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     public static int getSeatsByNameAndDate(String  name, Date date)
     {
@@ -264,17 +221,7 @@ public class ReservationQueries  //getAllReservationsByDate  //getRoomsReservedB
         
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     public static ArrayList<ReservationEntry> getAllReservationsByFaculty(String faculty)
     {
@@ -307,17 +254,7 @@ public class ReservationQueries  //getAllReservationsByDate  //getRoomsReservedB
         return reservationInfoByFaculty;
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
      public static ArrayList<ReservationEntry> getDroppedRooms(String roomDrop)
     {
@@ -351,24 +288,7 @@ public class ReservationQueries  //getAllReservationsByDate  //getRoomsReservedB
         
     }
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 
-    
-    
-    
-    
-    
-    
-    
     
     
     public static void addReservationEntry(String faculty, String room, Date date, int seats)
