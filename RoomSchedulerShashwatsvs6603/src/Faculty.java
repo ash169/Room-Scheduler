@@ -16,19 +16,11 @@ public class Faculty
     private static PreparedStatement addFaculty;
     private static PreparedStatement getAllFacultyList;
     private static PreparedStatement getAllFacultyListByName;
-
-    
     
     private static ResultSet resultSet = null;
     
     String name = null;  //Property I (Public Key)
-     
-    
-    
-    
-    
-    
-    
+
     
     public static void addFaculty(String name)
     {
@@ -46,8 +38,6 @@ public class Faculty
         
     }
     
-    
-
     
     public static ArrayList<String> getAllFacultyList()
     {
@@ -73,12 +63,7 @@ public class Faculty
         return faculty;
         
     }
-    
-    
-    
-    
-    
-    
+
     
     public static ArrayList<String> getAllFacultyListByName(String name)
     {
